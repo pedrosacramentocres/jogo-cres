@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --bg-start: #14213d;
+  --bg-end: #22142d;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #667085;
+  --line: #d1d5db;
+  --accent: #8b5cf6;
+  --accent-2: #f97316;
+  --cell-size: min(22vw, 110px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: min(560px, calc(100vw - 40px));
+}
+
+.game-card {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 30px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 5vw, 40px);
+  color: var(--text);
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.score-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+.board {
+  width: fit-content;
+  background: var(--panel);
+  display: grid;
+  grid-template-columns: repeat(3, var(--cell-size));
+  gap: 12px;
+  margin: 10px auto 20px;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 15px;
+  border: 2px solid var(--line);
+  color: var(--text);
+  background: #f8fafc;
+  font-size: clamp(44px, 7vw, 56px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.cell:hover {
+  background: #eef2ff;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.cell.x {
+  color: var(--accent);
+}
+
+.cell.o {
+  color: var(--accent-2);
+}
+
+.game-info {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.restart {
+  margin-top: 12px;
+  background: var(--accent);
+  color: var(--panel);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.restart:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
