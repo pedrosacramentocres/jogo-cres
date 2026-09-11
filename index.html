@@ -3,30 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jogo da Velha</title>
+  <title>Jogo da Velha 3D</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app">
     <section class="game-card">
-      <h1>Jogo da Velha</h1>
+      <div class="game-header">
+        <h1>Jogo da Velha</h1>
+      </div>
 
       <div class="scoreboard">
         <span class="score-label">Jogador X</span>
         <span class="score-label">Jogador O</span>
       </div>
 
-      <div class="board" id="board" aria-label="Jogo da velha">
-        <button class="cell" data-index="0" aria-label="Casa 1"></button>
-        <button class="cell" data-index="1" aria-label="Casa 2"></button>
-        <button class="cell" data-index="2" aria-label="Casa 3"></button>
-        <button class="cell" data-index="3" aria-label="Casa 4"></button>
-        <button class="cell" data-index="4" aria-label="Casa 5"></button>
-        <button class="cell" data-index="5" aria-label="Casa 6"></button>
-        <button class="cell" data-index="6" aria-label="Casa 7"></button>
-        <button class="cell" data-index="7" aria-label="Casa 8"></button>
-        <button class="cell" data-index="8" aria-label="Casa 9"></button>
-      </div>
+      <section class="scene-frame">
+        <div id="scene-container" aria-label="Jogo da velha em 3D"></div>
+      </section>
 
       <div class="game-info">
         <span id="status">Vez do jogador X</span>
@@ -36,6 +30,6 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
